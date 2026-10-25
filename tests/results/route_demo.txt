@@ -1,0 +1,20 @@
+## Published example (reachable target, source, unreachable target)
+edges = [[0, 1, 3], [0, 2, 8], [1, 2, -7], [2, 3, 4]]
+dag result = {"acyclic":true,"distance":[0,3,-4,0,null],"parent_edge":[-1,0,2,3,-1]}
+reconstruct_route(edges, result, 0, 3) -> [0, 1, 2, 3]   edge IDs [0, 2, 3], total weight 0, distance 0
+reconstruct_route(edges, result, 0, 0) -> [0]   edge IDs [], total weight 0, distance 0
+reconstruct_route(edges, result, 0, 4) -> []   edge IDs [], total weight -, distance null
+
+## Tied paths and parallel edges
+edges = [[0, 1, 1], [0, 2, 2], [1, 3, 2], [2, 3, 1], [0, 3, 3], [0, 3, 3]]
+dag result = {"acyclic":true,"distance":[0,1,2,3],"parent_edge":[-1,0,1,4]}
+reconstruct_route(edges, result, 0, 3) -> [0, 3]   edge IDs [4], total weight 3, distance 3
+reconstruct_route(edges, result, 0, 1) -> [0, 1]   edge IDs [0], total weight 1, distance 1
+
+## Source that is not vertex 0
+edges = [[0, 1, 1], [1, 2, 1], [2, 3, 4]]
+dag result = {"acyclic":true,"distance":[null,null,0,4],"parent_edge":[-1,-1,-1,2]}
+reconstruct_route(edges, result, 2, 3) -> [2, 3]   edge IDs [2], total weight 4, distance 4
+reconstruct_route(edges, result, 2, 2) -> [2]   edge IDs [], total weight 0, distance 0
+reconstruct_route(edges, result, 2, 0) -> []   edge IDs [], total weight -, distance null
+

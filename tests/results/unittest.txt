@@ -1,0 +1,41 @@
+$ python -m unittest discover -s tests -v
+test_dag (test_algorithms.CheckerAcceptsAlternativesAndRejectsInvalidWitnesses.test_dag) ... ok
+test_dsu (test_algorithms.CheckerAcceptsAlternativesAndRejectsInvalidWitnesses.test_dsu) ... ok
+test_msf (test_algorithms.CheckerAcceptsAlternativesAndRejectsInvalidWitnesses.test_msf) ... ok
+test_scc (test_algorithms.CheckerAcceptsAlternativesAndRejectsInvalidWitnesses.test_scc) ... ok
+test_topo (test_algorithms.CheckerAcceptsAlternativesAndRejectsInvalidWitnesses.test_topo) ... ok
+test_expected_answers_agree_with_independent_references (test_algorithms.HandwrittenCases.test_expected_answers_agree_with_independent_references) ... ok
+test_program_output_in_one_process_with_repeats (test_algorithms.HandwrittenCases.test_program_output_in_one_process_with_repeats) ... ok
+test_kruskal_and_prim_agree (test_algorithms.RandomCrossCheck.test_kruskal_and_prim_agree) ... ok
+test_random_small_graphs (test_algorithms.RandomCrossCheck.test_random_small_graphs) ... ok
+test_repeated_mixed_requests_in_one_process (test_algorithms.RandomCrossCheck.test_repeated_mixed_requests_in_one_process) ... ok
+test_broken_witness_is_reported (test_algorithms.RouteHelper.test_broken_witness_is_reported) ... ok
+test_cyclic_result_has_no_route (test_algorithms.RouteHelper.test_cyclic_result_has_no_route) ... ok
+test_reachable_target (test_algorithms.RouteHelper.test_reachable_target) ... ok
+test_route_on_deep_chain (test_algorithms.RouteHelper.test_route_on_deep_chain) ... ok
+test_source (test_algorithms.RouteHelper.test_source) ... ok
+test_tied_and_parallel_edges (test_algorithms.RouteHelper.test_tied_and_parallel_edges) ... ok
+test_unreachable_target (test_algorithms.RouteHelper.test_unreachable_target) ... ok
+test_each_large_request (test_scale.FullLimits.test_each_large_request) ...   dsu random q=250000                      1.23 s
+  dsu chain then repeats                   0.96 s
+  kruskal random full                      0.93 s
+  prim random full                         1.77 s
+  kruskal connected full                   0.82 s
+  prim connected full                      1.61 s
+  scc random full                          0.67 s
+  scc deep chain n=100000                  0.36 s
+  scc one giant cycle                      0.58 s
+  topo dag full                            0.48 s
+  topo deep chain n=100000                 0.13 s
+  topo chain closed into a cycle           0.12 s
+  dag full                                 0.65 s
+  dag deep chain n=100000                  0.26 s
+  dag chain with far unreachable cycle     0.26 s
+ok
+test_mixed_large_batch_in_one_process (test_scale.FullLimits.test_mixed_large_batch_in_one_process) ...   mixed batch of 7 requests: 5.53 s
+ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 47.322s
+
+OK
